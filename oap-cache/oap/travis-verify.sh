@@ -2,9 +2,9 @@
 
 
 function before_install {
-	sudo apt-get install cmake
-	sudo apt-get install libpthread-stubs0-dev
-	sudo apt-get install libnuma-dev
+	sudo apt-get install -f cmake
+	sudo apt-get install -f libpthread-stubs0-dev
+	sudo apt-get install -f libnuma-dev
 }
 
 function install {
