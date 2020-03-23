@@ -26,10 +26,10 @@ function before_script {
 }
 
 function script {
-	
+	export SPARK_HOME=`pwd`/spark-2.4.4-bin-hadoop2.7
 	echo "function script: $SPARK_HOME"
-#	cd oap-cache/oap/
-#	mvn clean -q -Ppersistent-memory test
+	cd oap-cache/oap/
+	mvn clean -q -Ppersistent-memory test
 }
 
 if [ "$1" = "before_install" ]; then
