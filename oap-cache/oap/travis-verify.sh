@@ -17,12 +17,12 @@ function install {
 
 function before_script {
 	echo "function before_script: $SPARK_HOME"
-#	cd /tmp
-#	git clone https://github.com/memkind/memkind.git
-#	cd memkind && ./build.sh
-#	make
-#	sudo make install
-#	cd ${TRAVIS_BUILD_DIR}
+	cd /tmp
+	git clone https://github.com/memkind/memkind.git
+	cd memkind && ./build.sh
+	make
+	sudo make install
+	cd ${TRAVIS_BUILD_DIR}
 }
 
 function script {
