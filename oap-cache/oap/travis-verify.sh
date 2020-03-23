@@ -8,25 +8,28 @@ function before_install {
 }
 
 function install {
-	exit 0
-}
-
-function before_script {
-	cd /tmp
-	git clone https://github.com/memkind/memkind.git
-	cd memkind && ./build.sh
-	make
-	sudo make install
-	cd ${TRAVIS_BUILD_DIR}
-}
-
-function script {
 	[ -f spark ] || mkdir spark && cd spark && wget http://archive.apache.org/dist/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz && cd ..
 	tar -xf ./spark/spark-2.4.4-bin-hadoop2.7.tgz
 	export SPARK_HOME=`pwd`/spark-2.4.4-bin-hadoop2.7
+	echo "function install: $SPARK_HOME"
+	#exit 0
+}
+
+function before_script {
+	echo "function before_script: $SPARK_HOME"
+#	cd /tmp
+#	git clone https://github.com/memkind/memkind.git
+#	cd memkind && ./build.sh
+#	make
+#	sudo make install
+#	cd ${TRAVIS_BUILD_DIR}
+}
+
+function script {
 	
-	cd oap-cache/oap/
-	mvn clean -q -Ppersistent-memory test
+	echo "function script: $SPARK_HOME"
+#	cd oap-cache/oap/
+#	mvn clean -q -Ppersistent-memory test
 }
 
 if [ "$1" = "before_install" ]; then
