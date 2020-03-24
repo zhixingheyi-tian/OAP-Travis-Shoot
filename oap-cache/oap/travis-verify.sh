@@ -5,6 +5,9 @@ function before_install {
 	sudo apt-get install -f cmake
 	sudo apt-get install -f libpthread-stubs0-dev
 	sudo apt-get install -f libnuma-dev
+	
+	cmakepath=`which cmake`
+	echo $cmakepath
 }
 
 function install {
@@ -23,6 +26,8 @@ function before_script {
 	make
 	sudo make install
 	cd ${TRAVIS_BUILD_DIR}
+	cmakepath=`which cmake`
+	echo $cmakepath
 }
 
 function script {
