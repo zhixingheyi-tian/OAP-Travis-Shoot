@@ -7,7 +7,7 @@ function before_install {
 	sudo apt-get install -f libnuma-dev
 	
 	cmakepath=`which cmake`
-	echo $cmakepath
+	echo "cmakepath: $cmakepath"
 }
 
 function install {
@@ -19,7 +19,7 @@ function install {
 }
 
 function before_script {
-	echo "function before_script: $SPARK_HOME"
+	echo "cmakepath: $cmakepath"
 	cd /tmp
 	git clone https://github.com/memkind/memkind.git
 	cd memkind && ./build.sh
