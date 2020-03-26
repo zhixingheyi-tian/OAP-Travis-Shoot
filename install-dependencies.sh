@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 set -ex
-	apt-get install cmake
-	apt-get install libpthread-stubs0-dev
-	apt-get install libnuma-dev
+	sudo apt-get install cmake
+	sudo apt-get install libpthread-stubs0-dev
+	sudo apt-get install libnuma-dev
 
 
 
