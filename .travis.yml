@@ -25,10 +25,6 @@ jobs:
       script:
       - cd ${TRAVIS_BUILD_DIR}/oap-cache/oap/
       - mvn clean -q -Ppersistent-memory test
-    - name: oap-shuffle-remote-shuffle
-      script:
-      - cd ${TRAVIS_BUILD_DIR}/oap-shuffle/remote-shuffle/
-      - mvn -q test
 
 
 
